@@ -10,6 +10,7 @@ def redirect(request, html_path, **kwargs):
 
 
 def render_html(html_path, **kwargs):
+    html_path = html_path.lstrip('/')
     with open(html_path, 'r', encoding='utf-8') as f:
         data_html = f.read()
         template = Template(data_html)
